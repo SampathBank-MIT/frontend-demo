@@ -1,0 +1,24 @@
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+env:
+    REGISTRY: ghcr.io
+    IMAGE_NAME: ${{ github.repository_owner }}/frontend
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: echo "npm test"
