@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/frontend-test-image
+  IMAGE_NAME: sampathbank-mit/frontend-test-image # Convert to lowercase
 
 jobs:
   test:
@@ -33,7 +33,7 @@ jobs:
       - name: Log in to GitHub Docker Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
 
-      # Build the Docker image
+      # Build the Docker image (with lowercase repository name)
       - name: Build Docker image
         run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
 
