@@ -22,7 +22,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DB_STRING }}
         run: |
           echo "Database URL is $DATABASE_URL"
-# on:
+## on:
 #   workflow_dispatch:
 #   push:
 #     branches:
