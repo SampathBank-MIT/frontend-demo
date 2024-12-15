@@ -19,7 +19,7 @@ jobs:
 
       - name: Set database connection string
         env:
-          DATABASE_URL: ${{ secrets.DB_STRING }}
+          DATABASE_URL: ${{ env.DB_STRING }}
         run: |
           echo "Database URL is $DATABASE_URL"
 # on:
