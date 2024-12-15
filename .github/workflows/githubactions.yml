@@ -7,11 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ 
-        github.ref_name == 'prod' && 'production' || 
-        github.ref_name == 'qa' && 'qa' || 
-        'develop' 
-        }}
+    environment: production
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,7 +16,7 @@ jobs:
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
         run: |
-          echo "Database URL is $DATABASE_URL of ${GITHUB_ENV}"
+          echo "Database URL is $DATABASE_URL
 # on:
 #   workflow_dispatch:
 #   push:
