@@ -8,11 +8,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     environment: 
-      name: production
+      name: develop
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
       - name: Set database connection string
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
