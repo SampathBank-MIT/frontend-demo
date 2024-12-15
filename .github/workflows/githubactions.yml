@@ -19,9 +19,9 @@ jobs:
 
       - name: Set database connection string
         env:
-          DATABASE_URL: ${{ env.DB_STRING }}
+          DATABASE_URL: ${{ env.DATABASE_URL }}
         run: |
-          echo "Database URL is $DATABASE_URL"
+          echo "Database URL is $DATABASE_URL of $ENVIRONMENT"
 # on:
 #   workflow_dispatch:
 #   push:
