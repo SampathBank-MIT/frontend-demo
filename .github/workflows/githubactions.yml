@@ -8,8 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     environment: production
-    env:
-        DATABASE_URL: ${{ env.DATABASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
