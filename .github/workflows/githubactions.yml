@@ -8,12 +8,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     environment: production
+    env:
+        DATABASE_URL: ${{ env.DATABASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      
       - name: Set database connection string
         run: |
+          env:
+            DATABASE_URL: ${{ env.DATABASE_URL }}
           echo "Database URL is ${{ env.DATABASE_URL }}"
 # on:
 #   workflow_dispatch:
