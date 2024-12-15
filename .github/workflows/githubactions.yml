@@ -16,7 +16,7 @@ jobs:
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
         run: |
-          echo "Database URL is $DATABASE_URL
+          echo "Database URL is $DATABASE_URL"
 # on:
 #   workflow_dispatch:
 #   push:
